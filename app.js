@@ -6,9 +6,12 @@ function runApp() {
     const server = http.createServer(app);
 
     server.listen(3000, () => {
-        console.log('listening on http://%s:%s',"localhost", 3000);
+        console.log('listening on http://%s:%s', "localhost", 3000);
     });
+
     return app
 }
 
-export default runApp;
+const app = runApp();
+
+export default app;

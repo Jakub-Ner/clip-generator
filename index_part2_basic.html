@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI ClipMaker</title>
+    <style>
+        body {
+            margin: 0;
+            padding-bottom: 3rem;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        #form {
+            background: rgba(0, 0, 0, 0.15);
+            padding: 0.25rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            height: 25rem;
+            box-sizing: border-box;
+            backdrop-filter: blur(10px);
+        }
+
+        #form > button {
+            background: #333;
+            border: none;
+            padding: 0 1rem;
+            margin: 0.25rem;
+            border-radius: 3px;
+            outline: none;
+            color: #fff;
+        }
+
+        #messages {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #messages > li {
+            padding: 0.5rem 1rem;
+        }
+
+        #messages > li:nth-child(odd) {
+            background: #efefef;
+        }
+
+        .wrapper {
+            background: #EFEFEF;
+            box-shadow: 1px 1px 10px #999;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            margin-bottom: 20px !important;
+            width: 800px;
+            padding-top: 5px;
+            top: 25rem;
+        }
+
+        .scrolls {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            /*height: 80px;*/
+            white-space: nowrap
+        }
+
+        .genImg {
+            box-shadow: 1px 1px 10px #999;
+            margin: 2px;
+            max-height: 300px;
+            cursor: pointer;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+
+<ul id="messages"></ul>
+<form id="form" action="">
+    <textarea id="lyrics" name="lyrics" rows="100" cols="100">Paste here a lyrics</textarea>
+    <!--  <button>Save</button>-->
+    <button type="submit" name="generate" value="true">Generate</button>
+    <button type="submit" name="delete" value="true">Delete</button>
+</form>
+
+
+<div class="wrapper">
+    <div class="scrolls">
+        <p>Here will be placed generated images</p>
+        <!-- place for imgs -->
+    </div>
+</div>
+</body>
+</html>
