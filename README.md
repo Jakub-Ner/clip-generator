@@ -1,7 +1,7 @@
 ## Clip Generator
 Tool helping in generating images from lyrics, poems. 
 It uses [Replicate](https://replicate.com/) API and [Stable Diffusion](https://replicate.com/stability-ai/stable-diffusion) AI model.
-![Demo](./demo.gif)
+![Demo](./demo0.gif)
 
 TODO:
 - implementing UI helper for adding replicate token to secrets.js,  
