@@ -44,12 +44,14 @@ async function getImages(lyrics, index) {
 
 async function* generateImages(lyrics) {
     if (lyrics.length === 0) return;
+    // const vibe = " trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, aesthetic, very inspirational"
+    const vibeAgatki = " :: a highly detailed epic cinematic concept art CG render digital painting artwork. By Greg Rutkowski, Ilya Kuvshinov, WLOP, Stanley Artgerm Lau, Ruan Jia and Fenghua Zhong, trending on ArtStation, subtle muted cinematic colors, made in Maya, Blender and Photoshop, octane render, excellent composition, cinematic atmosphere, dynamic dramatic cinematic lighting, precise correct anatomy, aesthetic, very inspirational, arthouse";
     try {
         const replicate = new Replicate({token: TOKEN});
         const model = await replicate.models.get('stability-ai/stable-diffusion');
         const lines = split(lyrics);
         for (const line of lines) {
-            const imageURL = await model.predict({prompt: line});
+            const imageURL = await model.predict({prompt: line + vibeAgatki});
             // const imageURL = "http://www.telekarma.pl/userfiles/images/aktualnosci/305464337-760x500.jpg"; // for testing
             yield {
                 prompt: line,
